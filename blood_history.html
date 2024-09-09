@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #dc1313;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-end;
+            /* Align content to the right */
+            padding-right: 20px;
+            /* Add padding to the right */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <a href="/">Home</a>
+
+            <a href="/edit">Edit Details</a>
+            <!-- <a href="/donate_blood">Donate Blood</a> -->
+            <!-- <a href="/sale_blood">Request Blood</a> -->
+            <a href="history">Blood History</a>
+            <a>Hi, {{session.email}}</a>
+            <a href="logout">Logout</a>
+        </nav>
+    </header>
+    <h1>Donation History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Registered Email</th>
+                <th>Blood Group</th>
+                <th>Donor Name</th>
+                <th>Gender</th>
+                <th>Quantity</th>
+                <th>Donor Weight</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Donation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donors %}
+            <tr>
+                <td>{{ donor[0] }}</td>
+                <td>{{ donor[1] }}</td>
+                <td>{{ donor[2] }}</td>
+                <td>{{ donor[3] }}</td>
+                <td>{{ donor[4] }}</td>
+                <td>{{ donor[5] }}</td>
+                <td>{{ donor[7] }}</td>
+                <td>{{ donor[8] }}</td>
+                <td>{{ donor[9] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1>Blood Purchase History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Registered Email</th>
+                <th>Blood Group</th>
+                <th>Patient Name</th>
+                <th>Gender</th>
+                <th>Quantity</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Purchase Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient[0] }}</td>
+                <td>{{ patient[1] }}</td>
+                <td>{{ patient[2] }}</td>
+                <td>{{ patient[3] }}</td>
+                <td>{{ patient[4] }}</td>
+                <td>{{ patient[6] }}</td>
+                <td>{{ patient[7] }}</td>
+                <td>{{ patient[8] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

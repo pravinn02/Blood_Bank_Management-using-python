@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+            background-color: rgb(190, 34, 34);
+
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        nav {
+            margin-top: 20px;
+            /* Adjust margin for the nav section */
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            /* Remove default list styling */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            /* Set to display horizontally */
+            justify-content: center;
+            /* Center items horizontally */
+        }
+
+        li {
+            margin-right: 10px;
+            /* Adjust margin between list items */
+        }
+
+        nav a {
+            display: block;
+            padding: 10px;
+            background-color: #333;
+            /* Background color for links */
+            color: #fff;
+            /* Text color for links */
+            text-decoration: none;
+            border-radius: 5px;
+            /* Rounded corners */
+            transition: background-color 0.3s;
+            /* Smooth transition */
+        }
+
+        nav a:hover {
+            background-color: #cc00ff;
+            /* Background color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header><br><br>
+    <nav>
+        <ul>
+            <li><a href="/all_users">All Users</a></li>
+            <li><a href="/donor_list">Donor List</a></li>
+            <li><a href="/patient_list">Patient List</a></li>
+            <li><a href="/blood_stock">Blood Stock</a></li>
+            <!-- <li><a href="/Notification">Notification</a></li> -->
+            <li><a href="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+</head>
+<body>
+    <h1>My Profile</h1>
+    <form action="/myprofile/{{ user.email }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ user.name }}" required><br><br>
+        <label for="addr">Address:</label>
+        <input type="text" id="addr" name="addr" value="{{ user.addr }}" required><br><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ user.city }}" required><br><br>
+        <label for="pin">Pin Code:</label>
+        <input type="text" id="pin" name="pin" value="{{ user.pin }}" required><br><br>
+        <label for="bg">Blood Group:</label>
+        <input type="text" id="bg" name="bg" value="{{ user.bg }}" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ user.email }}" required><br><br>
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+</html>

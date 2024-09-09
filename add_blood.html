@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        select,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #dc1313;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-end;
+            /* Align content to the right */
+            padding-right: 20px;
+            /* Add padding to the right */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <a href="/">Home</a>
+            
+            <a href="/edit">Edit Details</a>
+            <!-- <a href="/donate_blood">Donate Blood</a> -->
+            <!-- <a href="/sale_blood">Request Blood</a> -->
+            <a href="history">Blood History</a>
+            <a>Hi, {{session.email}}</a>
+            <a href="logout">Logout</a>
+        </nav>
+    </header>
+    <h2>Blood Donation Form</h2>
+    
+    <form action="/donate_blood" method="post">
+        <label for="blood_group">Blood Group:</label>
+        <select id="blood_group" name="blood_group" required>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select><br><br>
+
+        <label for="donorname">Donor Name:</label>
+        <input type="text" id="donorname" name="donorname" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="qty">Quantity (ml):</label>
+        <input type="number" id="qty" name="qty" required><br><br>
+
+        <label for="dweight">Donor Weight (kg):</label>
+        <input type="number" id="dweight" name="dweight" required><br><br>
+
+        <label for="donor_email">Donor Email:</label>
+        <input type="email" id="donor_email" name="donor_email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

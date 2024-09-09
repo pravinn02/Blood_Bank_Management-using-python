@@ -1,0 +1,62 @@
+
+    <title>Donor List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Donor List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Registered Email</th>
+                <th>Blood Group</th>
+                <th>Donor Name</th>
+                <th>Gender</th>
+                <th>Quantity</th>
+                <th>Donor Weight</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Donation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donors %}
+            <tr>
+                <td>{{ donor[0]}}</td>
+                <td>{{ donor[1]}}</td>
+                <td>{{ donor[2] }}</td>
+                <td>{{ donor[3] }}</td>
+                <td>{{ donor[4] }}</td>
+                <td>{{ donor[5] }}</td>
+                <td>{{ donor[7] }}</td>
+                <td>{{ donor[8] }}</td>
+                <td>{{ donor[9] }}</td>
+                <!-- <td>{{ donor[10] }}</td> -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>

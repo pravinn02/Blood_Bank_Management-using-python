@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Resetting default browser styles */
+        body,
+        h1,
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            background-image: url('../static/img/Blood-Donation-1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container styles */
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            /* Increase width of container */
+            text-align: center;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* Header styles */
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 18px;
+            /* Increase font size of label */
+            text-align: left;
+            /* Align label text to the left */
+            width: 100%;
+            /* Ensure labels take full width */
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 16px;
+            /* Increase padding for larger input fields */
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            /* Increase border radius for rounded corners */
+            box-sizing: border-box;
+            font-size: 18px;
+            /* Increase font size of input */
+            transition: border-color 0.3s ease;
+            /* Add transition effect */
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #3cb96c;
+            /* Change border color on focus */
+            text-align: left;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #3cb96c;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Links styles */
+        .links {
+            margin-top: 20px;
+            font-size: 16px;
+            /* Increase font size of links */
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #0056b3;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #dc1313;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+            <a href="admin_login">Admin Login</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Admin Login</h1>
+        <form action="/admin_login" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <input type="submit" value="Login">
+            {{msg}}
+        </form>
+        <div class="links">
+
+        </div>
+    </div>
+</body>
+
+</html>

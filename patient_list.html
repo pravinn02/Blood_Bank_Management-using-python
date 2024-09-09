@@ -1,0 +1,60 @@
+
+<title>Patient List</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+    h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+</style>
+</head>
+<body>
+<h1>Patient List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Registered Email</th>
+            <th>Blood Group</th>
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Quantity</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Purchase Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+        <tr>
+            <td>{{ patient[0]}}</td>
+            <td>{{ patient[1]}}</td>
+            <td>{{ patient[2] }}</td>
+            <td>{{ patient[3] }}</td>
+            <td>{{ patient[4] }} ml</td>
+            <td>{{ patient[6] }}</td>
+            <td>{{ patient[7] }}</td>
+            <td>{{ patient[8] }}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>

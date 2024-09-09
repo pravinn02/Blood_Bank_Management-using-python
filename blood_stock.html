@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Stock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(190, 34, 34);
+        }
+
+        .card {
+            width: calc(102.33% - 20px);
+            margin: 0 10px 20px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .card-body {
+            position: relative;
+        }
+
+        .card-body img {
+            width: 50px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .card-title {
+            text-align: center;
+        }
+
+        h1{
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Blood Stock</h1> <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card text-white bg-primary">
+                        <div class="card-header">A positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[0][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-secondary">
+                        <div class="card-header">A negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[1][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success">
+                        <div class="card-header">B positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[2][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-danger">
+                        <div class="card-header">B negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[3][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card text-white bg-warning">
+                        <div class="card-header">AB positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[4][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-info">
+                        <div class="card-header">AB negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[5][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-light">
+                        <div class="card-header">O positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[6][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-dark">
+                        <div class="card-header">O negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[7][0]}} ml</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>

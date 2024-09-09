@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(190, 34, 34);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            /* To align items on both ends */
+            padding: 15px 20px;
+            /* Adjust padding */
+        }
+
+        nav .container-1 {
+            padding-left: 10px;
+            /* Adjust padding */
+        }
+
+        nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            /* Adjust font size */
+        }
+
+        nav a:hover {
+            background-color: #cc1f1f;
+            color: rgb(201, 150, 150);
+        }
+
+        .card {
+            width: calc(102.33% - 20px);
+            margin: 0 10px 20px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .card-body {
+            position: relative;
+        }
+
+        .card-body img {
+            width: 50px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .card-title {
+            text-align: center;
+        }
+
+        .custom-color {
+            background-color: #ff33bb;
+            /* Custom color */
+            /* Add any other styling properties as needed */
+        }
+
+        .custom-color-request {
+            background-color: #33ff8f;
+            /* Custom color */
+            /* Add any other styling properties as needed */
+        }
+
+        h1 {
+            font-size: 36px;
+            /* Adjust font size */
+            color: blue;
+            /* Text color */
+            margin-top: 30px;
+            /* Adjust top margin */
+        }
+
+        .card {
+            /* Your existing styles */
+
+            /* Color grading */
+            filter: saturate(150%) contrast(120%) brightness(100%);
+            transition: filter 0.5s ease;
+            /* Add transition for smooth effect */
+        }
+
+        .card:hover {
+            filter: none;
+            /* Remove filters on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container-1">
+            <a href="/dashlab">BloodBank</a>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            {% if 'email' in session %}
+            <a href="/edit">Edit Details</a>
+            <!-- <a href="/donate_blood">Donate Blood</a> -->
+            <!-- <a href="/sale_blood">Request Blood</a> -->
+            <a href="history">Blood History</a>
+            <a>Hi, {{session.email}}</a>
+            <a href="logout">Logout</a>
+            {% else %}
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+            <!-- <a href="/donate_blood">Donate Blood</a> -->
+            <!-- <a href="/sale_blood">Request Blood</a> -->
+            <a href="admin_login">Admin Login</a>
+            <!-- <a href="/contact_us">Contact Us</a> -->
+            {% endif %}
+
+        </div>
+    </nav>
+
+    <header>
+        <h1>Welcome to Blood Bank Management System</h1>
+    </header>
+
+    <br><br>
+
+    <div class="container">
+        {{msg}}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card text-white bg-primary">
+                        <div class="card-header">A positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[0][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-secondary">
+                        <div class="card-header">A negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[1][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success">
+                        <div class="card-header">B positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[2][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-danger">
+                        <div class="card-header">B negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[3][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card text-white bg-warning">
+                        <div class="card-header">AB positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[4][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white bg-info">
+                        <div class="card-header">AB negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[5][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-light">
+                        <div class="card-header">O positive</div>
+                        <div class="card-body">
+                            <img src="../static/img/blood1.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[6][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-dark">
+                        <div class="card-header">O negative</div>
+                        <div class="card-body">
+                            <img src="../static/img/bloodnegative.png" alt="Blood Image">
+                            <h5 class="card-title">{{blood[7][0]}} ml</h5>
+                            <a href="/donate_blood">
+                                <button class="btn btn-warning custom-color">Donate Blood</button>
+                            </a>
+                            <br><br>
+                            <a href="/sale_blood">
+                                <button class="btn btn-info custom-color-request">Request Blood</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
